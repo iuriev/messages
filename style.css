@@ -6,30 +6,49 @@
 
 .wrapper {
     border: 4px solid black;
-    width: 300px;
+    width: 500px;
     padding: 20px;
+    background-color: azure;
 }
 
+.inputs{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
 .item {
+    width: 300px;
     display: flex;
     padding: 5px;
     flex-direction: column;
 }
+
 button{
     padding: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
+    background-color: bisque;
+    border: 2px solid olivedrab;
 }
+
 .text {
     display: flex;
     padding: 10px;
     flex-direction: column;
 }
+
 .double {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
 }
+
 .inputLink{
     width: 100%;
+}
+
+label{
+    display: flex;
+    justify-content: center;
 }
