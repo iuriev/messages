@@ -8,6 +8,7 @@ let takeProfit1;
 let takeProfit2;
 let takeProfit3;
 let fullLink;
+let shortLink;
 let finalMessage;
 
 window.addEventListener("load", function () {
@@ -21,9 +22,18 @@ window.addEventListener("load", function () {
     takeProfit2 = document.getElementById('takeProfit2');
     takeProfit3 = document.getElementById('takeProfit3');
     fullLink = document.getElementById('fullLink');
+    shortLink = document.getElementById('shortLink');
     finalMessage = document.getElementById('finalMessage');
     document.getElementById('generate').addEventListener('click', createLink);
+    document.getElementById('copyFullLink').addEventListener('click', copyFullLink);
     parseInstruments();
+
+
+
+
+
+
+
 });
 
 let createLink = function () {
@@ -39,6 +49,32 @@ let createLink = function () {
     link = link.replace(/\s{2,}/g, '');
     fullLink.value = link;
     finalMessage.value = `${messageText.value}<a href="${link}"> click me </a>`
+
+    let data = null;
+
+    let xhr = new XMLHttpRequest();
+    xhr.withCredentials = true;
+
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            console.log(this.responseText);
+            result= this.responseText.match(/>([\s\S]+?)</);
+            result = result[0].slice(1)
+            result = result.slice(0,-1);
+            shortLink.value = result;
+        }
+    });
+
+    xhr.open("GET", `https://shorturl-sfy-cx.p.rapidapi.com/?url=${link}`);
+    xhr.setRequestHeader("x-rapidapi-host", "shorturl-sfy-cx.p.rapidapi.com");
+    xhr.setRequestHeader("x-rapidapi-key", "a98b94d30bmsha0791ccba532f4bp15763bjsn1f6a19ca40e5");
+
+    xhr.send(data);
+}
+
+function copyFullLink() {
+    fullLink.select();
+    document.execCommand("copy");
 }
 
 function readTextFile(file, callback) {
