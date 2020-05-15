@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+       <link href="./style.css" rel="stylesheet" type ='text/css'>
+</head>
+<body>
+<div class = "box">
+    <div class="wrapper">
+        <div class="text">
+            <label>Маркетинговый тескт</label>
+            <textarea id = "message" rows="10" cols="100">
+            </textarea>
+        </div>
+        <div class="item">
+            <label>Бренд</label>
+            <select id = "brand" name="country">
+                <option value = "dev-m2-trading.umarkets.com">umarkets</option>
+            </select>
+        </div>
+        <div class="item">
+            <label>Тип сигнала</label>
+            <select id = "signalType" name="country">
+                <option value = "openDeal">Open Deal</option>
+            </select>
+        </div>
+        <div class="item">
+            <label>Инструмент </label>
+            <select   id = "instrument" name="country">
+            </select>
+        </div>
+        <div class="item">
+            <label>Направление совета</label>
+            <select id = "orderDirection" name="country">
+                <option value = "BUY">BUY</option>
+                <option value = "SELL">SELL</option>
+            </select>
+        </div>
+        <div class="item">
+            <label>Stopp Loss</label>
+            <input id = "stopLoss" type="number">
+        </div>
+        <div class="item">
+            <label>Take Profit1</label>
+            <input id = "takeProfit1" type="number">
+        </div>
+        <div class="item">
+            <label>Take Profit2</label>
+            <input id = "takeProfit2" type="number">
+        </div>
+        <div class="item">
+            <label>Take Profit3</label>
+            <input id = "takeProfit3"  type="number">
+        </div>
+        <div class="item">
+            <button id = "generate">
+                Сгенерировать
+            </button>
+        </div>
+        <div class="item">
+            <label>Full link</label>
+            <div class = "double">
+                <input class  = "inputLink" id = "fullLink"  type="text">
+                <button>COPY</button>
+            </div>
+        </div>
+        <div class="item">
+            <label>Short link</label>
+            <div id = "shortLink"  class = "double">
+                <input class  = "inputLink" type="text">
+                <button>COPY</button>
+            </div>
+        </div>
+    </div>
+</div>
+    <script src='script.js'></script>
+    <script src="instruments.json" type="application/json"></script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+{
+  "array": [
+   {
+     "symbol": "AUDCAD",
+     "name": "AUD/CAD"
+   },
+   {
+     "symbol": "AUDCHF",
+     "name": "AUD/CHF"
+   }
+  ]
+}
