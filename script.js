@@ -27,13 +27,6 @@ window.addEventListener("load", function () {
     document.getElementById('generate').addEventListener('click', createLink);
     document.getElementById('copyFullLink').addEventListener('click', copyFullLink);
     parseInstruments();
-
-
-
-
-
-
-
 });
 
 let createLink = function () {
