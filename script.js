@@ -8,6 +8,7 @@ let takeProfit1;
 let takeProfit2;
 let takeProfit3;
 let fullLink;
+let finalMessage;
 
 window.addEventListener("load", function () {
     messageText = document.getElementById('message');
@@ -20,6 +21,7 @@ window.addEventListener("load", function () {
     takeProfit2 = document.getElementById('takeProfit2');
     takeProfit3 = document.getElementById('takeProfit3');
     fullLink = document.getElementById('fullLink');
+    finalMessage = document.getElementById('finalMessage');
     document.getElementById('generate').addEventListener('click', createLink);
     parseInstruments();
 });
@@ -36,6 +38,7 @@ let createLink = function () {
     `;
     link = link.replace(/\s{2,}/g, '');
     fullLink.value = link;
+    finalMessage.value = `${messageText.value}<a href="${link}"> click me </a>`
 }
 
 function readTextFile(file, callback) {
