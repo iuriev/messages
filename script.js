@@ -53,12 +53,13 @@ function readTextFile(file, callback) {
 let parseInstruments = function () {
     readTextFile("instruments.json", function (text) {
         let data = JSON.parse(text);
-        for (let i = 0; i<data.array.length; i++){
-            let opt = document.createElement('option');
-            opt.value = data.array[i].symbol;
-            opt.innerHTML = data.array[i].name;
-            instrument.appendChild(opt);
-        }
+            for (let item in data) {
+                let value = data[item];
+                let opt = document.createElement('option');
+                opt.value = item;
+                opt.innerHTML = value;
+                instrument.appendChild(opt);
+            }
     });
 };
 
