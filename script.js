@@ -28,7 +28,6 @@ window.addEventListener("load", function () {
     parseInstruments();
 });
 
-
 let createLink = function () {
     let link = `https://${brand.value}/?isSmsNotify
     &type=${signalType.value}
@@ -37,28 +36,26 @@ let createLink = function () {
     &sl=${stopLoss.value}
     &tp1=${takeProfit1.value}
     &tp2=${takeProfit2.value}
-    &tp3=${takeProfit3.value}
-    `;
+    &tp3=${takeProfit3.value}`;
     link = link.replace(/\s{2,}/g, '');
     fullLink.value = link;
 
-    let data = null;
-
-    let xhr = new XMLHttpRequest();
-    xhr.withCredentials = true;
-    xhr.addEventListener("readystatechange", function () {
-        if (this.readyState === this.DONE) {
-            console.log(this.responseText);
-            result= this.responseText.match(/>([\s\S]+?)</);
-            result = result[0].slice(1)
-            result = result.slice(0,-1);
-            shortLink.value = result;
-        }
+    let json = JSON.stringify({
+        long_url: link,
+        group_guid: "Bk5fgrnGCOu"
     });
 
-   xhr.open("GET", `https://goo.su/api/convert?token=T2TpquvrbFO6B19aTxiWuvJdZbbmDJoTCsHQCkAtBXDMXdKcXQe39UwLArDR&url=${link}`);
-    xhr.setRequestHeader('content-type','application/x-www-form-urlencoded');
-   xhr.send(data);
+    let xhr = new XMLHttpRequest();
+    xhr.addEventListener("readystatechange", function () {
+        if (this.readyState === this.DONE) {
+            let t = JSON.parse(this.responseText)
+            shortLink.value = t.link;
+        }
+    });
+    xhr.open("POST", `https://api-ssl.bitly.com/v4/shorten`);
+    xhr.setRequestHeader('Content-type', 'application/json');
+    xhr.setRequestHeader('Authorization', 'Bearer 9f373bef78201db29272eefeb5df5a1bc3639055');
+    xhr.send(json);
 }
 
 function copyFullLink() {
@@ -86,13 +83,13 @@ function readTextFile(file, callback) {
 let parseInstruments = function () {
     readTextFile("instruments.json", function (text) {
         let data = JSON.parse(text);
-            for (let item in data) {
-                let value = data[item];
-                let opt = document.createElement('option');
-                opt.value = item;
-                opt.innerHTML = value;
-                instrument.appendChild(opt);
-            }
+        for (let item in data) {
+            let value = data[item];
+            let opt = document.createElement('option');
+            opt.value = item;
+            opt.innerHTML = value;
+            instrument.appendChild(opt);
+        }
     });
 };
 
