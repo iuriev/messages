@@ -26,6 +26,7 @@ window.addEventListener("load", function () {
     parseInstruments();
 });
 
+
 let createLink = function () {
     let link = `${brand.value}/?isSmsNotify
     &type=${signalType.value}
