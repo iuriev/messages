@@ -13,58 +13,53 @@
     <div class="wrapper">
         <div class="inputs">
             <div class="item">
-                <label>Бренд</label>
-                <select id="brand">
-                    <option value="https://trading.maximarkets.org">Maximarkets</option>
-                    <option value="https://trading.umarkets.com">Umarkets</option>
-                    <option value="https://trading.maxitrade.com">Maxitrade</option>
-                    <option value="https://trading.tradeallcrypto.com">Tradeallcrypto</option>
-                    <option value="https://trading.tradiva.com">Tradiva</option>
-                    <option value="https://trading.770capital.com">770capital</option>
-                    <option value="https://trading.maxicapital.org">MaxiCapital</option>
-                    <option value="https://trading.monfex.com">Monfex</option>
-                    <option value="https://trading.xcritical.com">Xcritical </option>
-                    <option value="https://trading.lexatrade.com">LexaTrade</option>
-                    <option value="https://trading.dowmarkets.com">DowMarkets</option>
-                    <option value="https://trading.limefx.com">LimeFx</option>
-                    <option value="https://trading.goldflame.com">Goldflame</option>
-                    <option value="https://uat-m-trading.umarkets.com"> uat-umarkets</option>
-                    <option value="https://uat-m-trading.maximarkets.org">uat-maximarkets</option>
-                    <option value="https://mobapp.umarkets.com">mobapp-umarkets</option>
-                    <option value="https://mobapp.maximarkets.org">mobapp-maximarkets</option>
+                <label for="brand">Бренд</label><select id="brand">
+                    <option value="https://trading-m.maximarkets.org">Maximarkets</option>
+                    <option value="https://trading-m.umarkets.com">Umarkets</option>
+                    <option value="https://trading-m.maxitrade.com">Maxitrade</option>
+                    <option value="https://trading-m.tradeallcrypto.com">Tradeallcrypto</option>
+                    <option value="https://trading-m.tradiva.com">Tradiva</option>
+                    <option value="https://trading-m.770capital.com">770capital</option>
+                    <option value="https://trading-m.maxicapital.org">MaxiCapital</option>
+                    <option value="https://trading-m.monfex.com">Monfex</option>
+                    <option value="https://trading-m.xcritical.com">Xcritical </option>
+                    <option value="https://trading-m.lexatrade.com">LexaTrade</option>
+                    <option value="https://trading-m.dowmarkets.com">DowMarkets</option>
+                    <option value="https://trading-m.limefx.com">LimeFx</option>
+                    <option value="https://trading-m.goldflame.com">Goldflame</option>
                 </select>
             </div>
             <div class="item">
-                <label>Тип сигнала</label>
+                <label for="signalType" >Тип сигнала</label>
                 <select id="signalType">
                     <option value="openDeal">Open Deal</option>
                 </select>
             </div>
             <div class="item">
-                <label>Инструмент </label>
+                <label for="instrument">Инструмент </label>
                 <select id="instrument"></select>
             </div>
             <div class="item">
-                <label>Направление совета</label>
+                <label for="orderDirection">Направление совета</label>
                 <select id="orderDirection">
                     <option value="BUY">BUY</option>
                     <option value="SELL">SELL</option>
                 </select>
             </div>
             <div class="item">
-                <label>Stopp Loss</label>
+                <label for="stopLoss">Stopp Loss</label>
                 <input id="stopLoss" type="number">
             </div>
             <div class="item">
-                <label>Take Profit1</label>
+                <label for="takeProfit1">Take Profit1</label>
                 <input id="takeProfit1" type="number">
             </div>
             <div class="item">
-                <label>Take Profit2</label>
+                <label for="takeProfit2">Take Profit2</label>
                 <input id="takeProfit2" type="number">
             </div>
             <div class="item">
-                <label>Take Profit3</label>
+                <label for="takeProfit3">Take Profit3</label>
                 <input id="takeProfit3" type="number">
             </div>
             <div class="item">
@@ -76,6 +71,7 @@
             <div class="text">
                 <label>Full link</label>
                 <div class="double">
+                    <label for="fullLink"></label>
                     <input class="inputLink" id="fullLink" type="text">
                     <button id="copyFullLink">COPY</button>
                 </div>
@@ -83,6 +79,7 @@
             <div class="text">
                 <label>Short link</label>
                 <div  class="double">
+                    <label for="shortLink"></label>
                     <input id="shortLink" class="inputLink" type="text">
                     <button id="copyShortLink">COPY</button>
                 </div>
