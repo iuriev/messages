@@ -2,6 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    height: 800px;
 }
 
 .wrapper {
@@ -9,6 +10,7 @@
     width: 500px;
     padding: 20px;
     background-color: azure;
+
 }
 .inputs{
     display: flex;

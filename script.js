@@ -1,4 +1,3 @@
-let messageText;
 let brand;
 let signalType;
 let instrument;
@@ -11,7 +10,6 @@ let fullLink;
 let shortLink;
 
 window.addEventListener("load", function () {
-    messageText = document.getElementById('message');
     brand = document.getElementById('brand');
     signalType = document.getElementById('signalType');
     instrument = document.getElementById('instrument');
@@ -29,7 +27,7 @@ window.addEventListener("load", function () {
 });
 
 let createLink = function () {
-    let link = `https://${brand.value}/?isSmsNotify
+    let link = `${brand.value}/?isSmsNotify
     &type=${signalType.value}
     &symbol=${instrument.value}
     &direction=${orderDirection.value}
